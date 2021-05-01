@@ -20,6 +20,7 @@ import com.qbo.exception.ResourceNotFoundException;
 import com.qbo.model.Estado;
 import com.qbo.service.*;
 
+@PreAuthorize("hasRole('ADMIN')")
 @RestController
 @RequestMapping(path = "api/v1/estado")
 public class EstadoController {
@@ -27,7 +28,7 @@ public class EstadoController {
 	@Autowired
 	protected EstadoService servicio;
 
-	@PreAuthorize("hasRole('ADMIN')")
+	//@PreAuthorize("hasRole('ADMIN')")
 	@GetMapping("")
 	public ResponseEntity<List<Estado>> obtenerTodo() {
 		List<Estado> estados = new ArrayList<Estado>();

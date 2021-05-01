@@ -28,8 +28,8 @@ public class SeguridadController {
 	@Autowired
 	protected SeguridadService servicio;
 
-	  @PostMapping("")
-	  public ResponseEntity<UsuarioResponse> crearEstado(
+	  @PostMapping("/autenticacion")
+	  public ResponseEntity<UsuarioResponse> autenticacionDeUsuario(
 			  @RequestParam("usuario")String usuario, 
 			  @RequestParam("password")String password) {
 		  Usuario objusuario=  servicio
