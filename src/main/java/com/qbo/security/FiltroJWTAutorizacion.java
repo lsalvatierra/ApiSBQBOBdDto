@@ -23,7 +23,7 @@ import io.jsonwebtoken.UnsupportedJwtException;
 public class FiltroJWTAutorizacion extends OncePerRequestFilter {
 	private final String HEADER = "Authorization";
 	private final String PREFIJO = "Bearer ";
-	private final String CLAVESECRETA = "@QBO2021";
+	private final String CLAVESECRETA = "${security.clave}";
 
 	//garantiza que solo se invocará una vez por solicitud dentro de un único hilo de solicitud.
 	@Override

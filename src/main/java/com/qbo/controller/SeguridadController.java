@@ -49,7 +49,8 @@ public class SeguridadController {
 	  
 	  
 	  private String generarToken(String usuario, Long idusuario) {
-			String clavesecreta = "@QBO2021";// Trabajarlo desde base de datos. 
+			//String clavesecreta = "@QBO2021";// Trabajarlo desde base de datos. 
+			String clavesecreta = "${security.clave}";// Trabajarlo desde base de datos.
 			List<GrantedAuthority> lstautorizacion = 
 					AuthorityUtils
 					.createAuthorityList(servicio.listarRolesPorUsuario(idusuario));
